@@ -15,6 +15,7 @@ lazy val server = project
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-http" % "10.2.6",
       "com.typesafe.akka" %% "akka-stream" % "2.6.16",
+      "com.typesafe.akka" %% "akka-actor" % "2.6.16",
       "com.vmunier" %% "scalajs-scripts" % "1.2.0"
     ),
     Assets / WebKeys.packagePrefix := "public/",
@@ -27,9 +28,14 @@ lazy val client = project
   .settings(
     // This is an application with a main method
     scalaJSUseMainModuleInitializer := true,
-    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.1.0"
+    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.1.0",
+    useYarn := true,
+    Compile / npmDependencies ++= Seq(
+      "two.js" -> "0.7.9",
+      "@types/two.js" -> "0.7.5"
+    )
   )
-  .enablePlugins(ScalaJSPlugin, ScalaJSWeb)
+  .enablePlugins(ScalaJSPlugin, ScalaJSWeb, ScalablyTypedConverterPlugin)
   .dependsOn(shared.js)
 
 lazy val shared = crossProject(JSPlatform, JVMPlatform)
