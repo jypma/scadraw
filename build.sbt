@@ -1,6 +1,6 @@
 
 ThisBuild / organization := "net.ypmania.scadraw"
-ThisBuild / scalaVersion := "2.13.7"
+ThisBuild / scalaVersion := "2.13.6"
 ThisBuild / version      := "0.1.0-SNAPSHOT"
 
 lazy val root = (project in file("."))
@@ -21,7 +21,7 @@ lazy val server = project
     Assets / WebKeys.packagePrefix := "public/",
     Runtime / managedClasspath += (Assets / packageBin).value
   )
-  .enablePlugins(SbtWeb, JavaAppPackaging)
+  .enablePlugins(SbtWeb, JavaAppPackaging, WebScalaJSBundlerPlugin)
   .dependsOn(shared.jvm)
 
 lazy val client = project
@@ -31,14 +31,16 @@ lazy val client = project
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.1.0",
     useYarn := true,
     Compile / npmDependencies ++= Seq(
-      "two.js" -> "0.7.9",
-      "@types/two.js" -> "0.7.5"
+      "two.js" -> "0.7.5"
     )
   )
-  .enablePlugins(ScalaJSPlugin, ScalaJSWeb, ScalablyTypedConverterPlugin)
+// ScalablyTypedConverterPlugin implies CommonJS modules, which are then merged by the
+// scalajs bundler plugin.
+// Don't use ScalaJSWeb: https://github.com/scalacenter/scalajs-bundler/pull/288
+  .enablePlugins(ScalaJSPlugin, WebScalaJS, ScalaJSBundlerPlugin)
   .dependsOn(shared.js)
 
 lazy val shared = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("shared"))
-  .jsConfigure(_.enablePlugins(ScalaJSWeb))
+  .jsConfigure(_.enablePlugins(WebScalaJS))

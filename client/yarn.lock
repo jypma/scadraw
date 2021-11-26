@@ -20,11 +20,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.9.tgz#879be3ad7af29f4c1a5c433421bf99fab7047185"
   integrity sha512-MKmdASMf3LtPzwLyRrFjtFFZ48cMf8jmX5VRYrDQiJa8Ybu5VAmkqBWqKU8fdCwD8ysw4mQ9nrEHvzg6gunR7A==
 
-"@types/two.js@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@types/two.js/-/two.js-0.7.5.tgz#dab339f84701def1966f170bc9f0e9a527eff756"
-  integrity sha512-DhygmgRWP++fVdjUF68KAd3ikgsER3JptLp6c46sz2vzoN28hIlL+WiR8WrmYIfbfMZgwjm4Ie6jJsesYGcXig==
-
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
@@ -3501,10 +3496,10 @@ tty-browserify@0.0.0:
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
   integrity sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=
 
-two.js@0.7.9:
-  version "0.7.9"
-  resolved "https://registry.yarnpkg.com/two.js/-/two.js-0.7.9.tgz#ecdcaa52e35db225f5eec8284419382135e4ba05"
-  integrity sha512-uf3NW0jjQb1uHSgmko75Z1peldPtO4y+JZIIpnUxR8lzlwlGN8xDmUYTZhhBudVSBGEtbZ0zecINFLPXV/9EcQ==
+two.js@0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/two.js/-/two.js-0.7.5.tgz#30d244e9b2b2832110596c4484016b2c5e35de05"
+  integrity sha512-eF0ikwezUx86+M+iRFLGytzxussemRQZmk4cJvVgXGl6HMF2QoeNk/Si7OD9MtE5vGA9DdKHLyUzehSWzTrK0g==
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
@@ -3518,11 +3513,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typescript@4.3:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
-  integrity sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==
 
 union-value@^1.0.0:
   version "1.0.1"
