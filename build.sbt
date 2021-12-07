@@ -28,10 +28,13 @@ lazy val client = project
   .settings(
     // This is an application with a main method
     scalaJSUseMainModuleInitializer := true,
-    libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.1.0",
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "2.0.0",
+      "com.raquo" %%% "laminar" % "0.14.2"
+    ),
     useYarn := true,
     Compile / npmDependencies ++= Seq(
-      "two.js" -> "0.7.5"
+//      "two.js" -> "0.7.5"
     )
   )
 // ScalablyTypedConverterPlugin implies CommonJS modules, which are then merged by the
